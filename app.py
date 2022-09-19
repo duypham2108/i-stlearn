@@ -531,5 +531,9 @@ from threading import Thread
 
 Thread(target=bk_worker).start()
 
+import resource
+mem_usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+print(mem_usage/1024)
+
 # if __name__ == "__main__":
 #     app.run(host="0.0.0.0", port=5005, debug=True, use_reloader=True)
